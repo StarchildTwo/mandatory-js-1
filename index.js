@@ -5,11 +5,10 @@ let contactP = document.querySelector("#contact>p");
 main.removeChild(rmSection);
 
 document.title = "Fruits & Vegetables Corp";
-let head = document.querySelector("head");
 let link = document.createElement("link");
 link.setAttribute("href", "main.css");
 link.setAttribute("rel", "stylesheet");
-head.insertBefore(link, document.querySelector("script"));
+document.head.insertBefore(link, document.querySelector("script"));
 
 let section = document.createElement("section");
 section.id = "about";
@@ -32,9 +31,10 @@ let aElements = document.querySelectorAll("a");
 aElements[2].textContent = "Vegetables";
 aElements[2].setAttribute("href", "#vegetables");
 
+
+// Changing <td> to <th>.
 let tdChild = document.querySelectorAll("thead td");
 let tr = document.querySelector("thead>tr");
-
 for (let i = 0; i < tdChild.length; i++) {
     let th = document.createElement("th")
     th.textContent = tdChild[i].textContent;
