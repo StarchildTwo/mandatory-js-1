@@ -25,7 +25,6 @@ let h2b = document.createElement("h2");
 h2b.textContent = "Contact";
 contact.insertBefore(h2b, contactP);
 
-
 let h1 = document.querySelector("h1");
 h1.textContent = "Fruits & Vegetables Corp";
 
@@ -33,14 +32,11 @@ let aElements = document.querySelectorAll("a");
 aElements[2].textContent = "Vegetables";
 aElements[2].setAttribute("href", "#vegetables");
 
-let tdChild1 = document.querySelector("thead td:first-child");
-let tdChild2 = document.querySelector("thead td:last-child");
+let tdChild = document.querySelectorAll("thead td");
 let tr = document.querySelector("thead>tr");
-tr.removeChild(tdChild1);
-tr.removeChild(tdChild2);
-let th1 = document.createElement("th")
-let th2 = document.createElement("th")
-th1.textContent = "Name";
-th2.textContent = "Email";
-tr.appendChild(th1);
-tr.appendChild(th2);
+
+for (let i = 0; i < tdChild.length; i++) {
+    let th = document.createElement("th")
+    th.textContent = tdChild[i].textContent;
+    tr.replaceChild(th, tdChild[i]);
+}
